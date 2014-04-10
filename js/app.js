@@ -12,19 +12,19 @@ function fizzBuzz ()
 	if(int === ""){
 		return
 	}
- for (int = int; int <= 100; int ++){
-	if ((int % 3 === 0) && (int % 5 === 0))
+ for (x = 1 ; x <= int; x ++){
+	if ((x % 3 === 0) && (x % 5 === 0))
 	{
   $(".wrapper").append('<p>fizzBuzz</p>');
-	}else if (int % 3 === 0)
+	}else if (x % 3 === 0)
 	{
 	$(".wrapper").append('<p>fizz</p>');
-	}else if(int % 5 === 0) 
+	}else if(x % 5 === 0) 
 	{
   $(".wrapper").append('<p>Buzz</p>');
 	}else
 	{
-  $(".wrapper").append('<p>' +int+ '</p>');
+  $(".wrapper").append('<p>' +x+ '</p>');
 	}
  }
 }
