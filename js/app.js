@@ -1,30 +1,33 @@
 $(document).ready(function(){
-$("#button").click(function(){
-	$("p").remove();
-  fizzBuzz();
-  });
+//click event to get user number remove p element and function call
+	$("#button").click(function(){
+		$("p").remove();
+		var myNumber = $("#number").val();
+		fizzBuzz(myNumber);
+	});
 
 });
-
-function fizzBuzz ()
+//fizzBuzz function display fizzBuzz depending on user input
+function fizzBuzz (myNumber)
 {
-	var int = $("#number").val();
-	if(int === ""){
-		return
+
+	if((myNumber % 1 != 0) || (isNaN(myNumber) || (myNumber > 100) || myNumber <= 0)){
+		alert("Please enter a valid number!");
+		return;
 	}
- for (x = 1 ; x <= int; x ++){
-	if ((x % 3 === 0) && (x % 5 === 0))
-	{
-  $(".wrapper").append('<p>fizzBuzz</p>');
-	}else if (x % 3 === 0)
-	{
-	$(".wrapper").append('<p>fizz</p>');
-	}else if(x % 5 === 0) 
-	{
-  $(".wrapper").append('<p>Buzz</p>');
-	}else
-	{
-  $(".wrapper").append('<p>' +x+ '</p>');
+//loop to check user input and append fizzBuzz to wrapper element
+	for (x = 1 ; x <= myNumber ; x ++){
+		if ((x % 3 === 0) && (x % 5 === 0)) {
+	  		$(".wrapper").append('<p>fizzBuzz</p>');
+		}
+		else if (x % 3 === 0) {
+			$(".wrapper").append('<p>fizz</p>');
+		}
+		else if(x % 5 === 0) {
+	  		$(".wrapper").append('<p>Buzz</p>');
+		}
+		else{
+	 	 	$(".wrapper").append('<p>' +x+ '</p>');
+		}
 	}
- }
 }
